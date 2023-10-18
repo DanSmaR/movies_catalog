@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Movie directors</h1>
+
+<%= link_to "New movie director", new_movie_director_path %>
+
+<div id="movie_directors">
+  <% @movie_directors.each do |movie_director| %>
+    <%= render movie_director %>
+    <p>
+      <%= link_to "Show this movie director", movie_director %>
+    </p>
+<% end %>
+</div>
+

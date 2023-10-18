@@ -1,0 +1,38 @@
+<%= form_with(model: movie_director) do |form| %>
+  <% if movie_director.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(movie_director.errors.count, "error") %> prohibited this movie_director from being saved:</h2>
+
+      <ul>
+        <% movie_director.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :nationality, style: "display: block" %>
+    <%= form.text_field :nationality %>
+  </div>
+
+  <div>
+    <%= form.label :birth_date, 'Birthdate', style: "display: block" %>
+    <%= form.date_field :birth_date %>
+  </div>
+
+  <div>
+    <!-- a select dropdown for movie genres and add an initial custom select value -->
+    <%= form.label :movie_genre_id, 'Movie Genre', style: "display: block" %>
+    <%= form.collection_select :movie_genre_id, MovieGenre.all, :id, :name, { include_blank: 'Select a movie genre' } %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

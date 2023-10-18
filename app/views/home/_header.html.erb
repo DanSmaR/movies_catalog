@@ -8,10 +8,12 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Genres</a>
+          <% class_link_movie = "nav-link#{' active' if current_page?(movie_genres_path)}"%>
+          <%= link_to 'Movie Genres', movie_genres_path, class: class_link_movie %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Directors</a>
+          <% class_link_director = "nav-link#{' active' if current_page?(movie_directors_path)}"%>
+          <%= link_to 'Movie Directors', movie_directors_path, class: class_link_director %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Movies</a>

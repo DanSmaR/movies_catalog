@@ -2,13 +2,16 @@
 
 <h1>Movie genres</h1>
 
+<%= link_to "New movie genre", new_movie_genre_path %>
 <div id="movie_genres">
   <% @movie_genres.each do |movie_genre| %>
-    <%= render movie_genre %>
+    <p>
+      <strong>Name:</strong>
+      <%= movie_genre.name %>
+    </p>
     <p>
       <%= link_to "Show this movie genre", movie_genre %>
     </p>
-  <% end %>
+<% end %>
 </div>
 
-<%= link_to "New movie genre", new_movie_genre_path %>

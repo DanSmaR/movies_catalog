@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :movie_directors
   resources :movie_genres
   # get 'home/index'
   root "home#index"

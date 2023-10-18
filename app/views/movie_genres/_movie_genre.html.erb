@@ -4,4 +4,9 @@
     <%= movie_genre.name %>
   </p>
 
+  <p>
+    <strong>Related Directors:</strong>
+    <%= movie_genre.movie_directors.find_all.map(&:name).join(', ') %>
+  </p>
+
 </div>
