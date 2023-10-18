@@ -6,5 +6,5 @@
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
   <%= link_to "Back to movies", movies_path %>
 
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <%= button_to "Destroy this movie", @movie, method: :delete, data: { turbo_confirm: 'Are you sure you wanna delete it?'}, class: 'btn btn-danger' %>
 </div>

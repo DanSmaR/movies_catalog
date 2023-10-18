@@ -2,14 +2,16 @@
 
 <h1>Movie directors</h1>
 
-<%= link_to "New movie director", new_movie_director_path %>
+<%= link_to "New movie director", new_movie_director_path, class: 'btn btn-primary' %>
 
-<div id="movie_directors" class="my-4">
+<div id="movie_directors" class="my-4 d-flex flex-wrap justify-content-between m-3" style="max-width: 800px">
   <% @movie_directors.each do |movie_director| %>
-    <%= render movie_director %>
-    <p class="mb-5">
-      <%= link_to "Show this movie director", movie_director %>
-    </p>
+    <div>
+        <%= render movie_director %>
+        <p class="mb-5">
+          <%= link_to "Show this movie director", movie_director, class: 'btn btn-info' %>
+        </p>
+    </div>
 <% end %>
 </div>
 

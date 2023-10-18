@@ -2,16 +2,18 @@
 
 <h1>Movie genres</h1>
 
-<%= link_to "New movie genre", new_movie_genre_path %>
-<div id="movie_genres" class="my-4">
+<%= link_to "New movie genre", new_movie_genre_path, class: 'btn btn-primary' %>
+<div id="movie_genres" class="my-4 d-flex flex-wrap justify-content-between m-3" style="max-width: 800px">
   <% @movie_genres.each do |movie_genre| %>
-    <p>
-      <strong>Name:</strong>
-      <%= movie_genre.name %>
-    </p>
-    <p class="mb-4">
-      <%= link_to "Show this movie genre", movie_genre %>
-    </p>
+    <div>
+        <p>
+          <strong>Name:</strong>
+          <%= movie_genre.name %>
+        </p>
+        <p class="mb-4">
+          <%= link_to "Show this movie genre", movie_genre, class: 'btn btn-info' %>
+        </p>
+    </div>
 <% end %>
 </div>
 

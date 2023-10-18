@@ -3,10 +3,10 @@
     <h1>Movies Catalog</h1>
     <p>A list of movies, genres and directors. Check it out.</p>
 
-      <ul>
-        <li><%= link_to 'Movie Genres', movie_genres_path %></li>
-        <li><%= link_to 'Movies Directors', movie_directors_path %></li>
-        <li>Movies</li>
+      <ul style="list-style: none; display: flex; column-gap: 1em">
+        <li><%= link_to 'Movie Genres', movie_genres_path, class: 'btn btn-info my-1' %></li>
+        <li><%= link_to 'Movies Directors', movie_directors_path, class: 'btn btn-info my-1' %></li>
+        <li><%= link_to 'Movies', movies_path, class: 'btn btn-info my-1' %></li>
       </ul>
   </article>
 </main>

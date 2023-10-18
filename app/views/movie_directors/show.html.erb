@@ -1,10 +1,14 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @movie_director %>
+<p>
+  <strong>Movies:</strong>
+  <%= @movie_director.movies.all.map(&:title).join(', ') %>
+</p>
 <%=  %>
 <div>
   <%= link_to "Edit this movie director", edit_movie_director_path(@movie_director) %> |
   <%= link_to "Back to movie directors", movie_directors_path %>
 
-  <%= button_to "Destroy this movie director", @movie_director, method: :delete %>
+  <%= button_to "Destroy this movie director", @movie_director, method: :delete, data: { turbo_confirm: 'Are you sure you wanna delete it?'}, class: 'btn btn-danger' %>
 </div>

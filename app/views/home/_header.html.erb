@@ -16,7 +16,8 @@
           <%= link_to 'Movie Directors', movie_directors_path, class: class_link_director %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Movies</a>
+          <% class_link_movie = "nav-link#{' active' if current_page?(movies_path)}"%>
+          <%= link_to 'Movies', movies_path, class: class_link_movie %>
         </li>
       </ul>
     </div>
