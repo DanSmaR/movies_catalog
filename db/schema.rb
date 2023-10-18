@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_18_152448) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_18_194423) do
   create_table "movie_directors", force: :cascade do |t|
     t.string "name", null: false
     t.string "nationality", null: false
@@ -27,5 +27,21 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_18_152448) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "movies", force: :cascade do |t|
+    t.string "title", null: false
+    t.date "release_year", null: false
+    t.string "synopse", null: false
+    t.string "country", null: false
+    t.integer "duration", null: false
+    t.integer "movie_director_id", null: false
+    t.integer "movie_genre_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["movie_director_id"], name: "index_movies_on_movie_director_id"
+    t.index ["movie_genre_id"], name: "index_movies_on_movie_genre_id"
+  end
+
   add_foreign_key "movie_directors", "movie_genres"
+  add_foreign_key "movies", "movie_directors"
+  add_foreign_key "movies", "movie_genres"
 end
